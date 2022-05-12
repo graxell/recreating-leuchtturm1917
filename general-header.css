@@ -1,0 +1,556 @@
+:root {
+  --lightgrey: #979797;
+}
+
+/* ---------- HEADER STYLING ---------- */
+header {
+  position: relative;
+  z-index: 10;
+}
+.header__logo {
+  margin: 48px 0 30px;
+}
+
+.header__logo img {
+  max-width: 100%;
+}
+
+@media (min-width: 380px) {
+  .header__logo img {
+    max-width: 360px;
+  }
+}
+
+/* ------ GENERAL NAV BAR CSS ------ */
+nav {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  z-index: 4;
+}
+
+/* MENU ON THE RIGHT */
+
+/* to display menu-icon into column on the right */
+.menu--right {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* menu-icon spacing */
+.menu__container {
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+/* to define icon size */
+.menu__container img {
+  width: 28px;
+}
+
+/* MENU SEARCH BAR */
+
+.menu__searchBar label {
+  cursor: pointer;
+}
+
+.menu__searchBar input[type="checkbox"] {
+  display: none;
+}
+
+/* setting layout for the search box */
+.menu__searchBar__box {
+  position: absolute;
+  top: -7px;
+  right: 200px;
+  width: 250px;
+  height: 40px;
+  opacity: 0;
+  transition: opacity 500ms;
+  visibility: hidden;
+}
+
+/* to make search bar appear and disappear on click */
+#menu__searchBar__toggle:checked ~ .menu__searchBar__box {
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu__searchBar__box input {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  padding: 0 40px 0 10px;
+  color: rgb(155, 155, 155);
+  border: rgba(196, 196, 196, 0.74) 1px solid;
+}
+
+/* to position the search icon inside the box */
+.menu__searchBar__box label {
+  position: absolute;
+  top: 7px;
+  right: -46px;
+}
+
+/* MENU CONTACTS -- appears on hover */
+
+/* to create the clip path shape to the inner fill and its border */
+.menu__contacts__inner,
+.menu__contacts__outer {
+  clip-path: polygon(
+    58% 20%,
+    50% 13%,
+    42% 20%,
+    0% 20%,
+    0% 100%,
+    100% 100%,
+    100% 20%
+  );
+  border-radius: 5px;
+}
+
+/* To add position and style the border on a clip path */
+.menu__contacts__outer {
+  content: "";
+  background: rgba(143, 142, 142, 0.452);
+  width: 225px;
+  height: 225px;
+
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 1000;
+}
+
+/* to position and style the contacts menu */
+.menu__contacts__inner {
+  position: relative;
+  left: 1px;
+  top: 2px;
+
+  background-color: rgb(255, 255, 255);
+  width: 193px;
+  height: 157px;
+  padding: 60px 15px 5px 15px;
+}
+
+/* Styling the contents of Contacts */
+
+.menu__contacts__inner a {
+  display: block;
+  font-size: 0.8rem;
+  padding-top: 10px;
+}
+
+.menu__contacts__inner a:not(:first-child) {
+  color: rgb(105, 105, 105);
+  font-weight: bold;
+}
+
+.menu__contacts__inner a:not(:first-child):hover {
+  color: rgb(224, 135, 0);
+  cursor: pointer;
+}
+
+/* to create a line break and style the contact span */
+.menu__contacts--lineBreak {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: normal;
+  padding-top: 3px;
+}
+
+/* adding line divider in between Contacts contents */
+.menu__contacts--lineBreak:not(span.span--end) {
+  border-bottom: solid 1px rgba(216, 216, 216, 0.836);
+  padding-bottom: 10px;
+}
+
+/* setting hover rule  */
+.menu__contacts:hover > .menu__contacts__outer {
+  display: block;
+}
+
+.menu__contacts__outer {
+  display: none;
+}
+
+/* LOGIN css */
+
+/* setting the login popup overlay */
+.menu__login--overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.267);
+  opacity: 0;
+  transition: opacity 500ms;
+  visibility: hidden;
+  cursor: auto;
+  z-index: 6;
+}
+
+.menu__login--overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu__login__popUp {
+  background: rgb(255, 255, 255);
+  border-radius: 6px;
+  max-width: 730px;
+  position: relative;
+  margin: 50px auto;
+}
+
+.menu__login__popUp,
+.menu__login__input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* login heading style */
+
+.menu__login__heading {
+  font-weight: normal;
+  padding: 20px 0;
+}
+
+.menu__login__heading,
+.menu__login__input:not(div.field) {
+  padding-inline: 15px;
+}
+
+/* login input styles */
+.menu__login__input:not(div.field) {
+  border-top: 0.2px solid rgba(172, 172, 172, 0.356);
+  border-bottom: 0.2px solid rgba(172, 172, 172, 0.356);
+}
+
+.menu__login__input label {
+  font-size: 0.9rem;
+  padding: 20px 0 10px;
+}
+
+.menu__login__input input {
+  border: 0.2px solid rgba(172, 172, 172, 0.356);
+  height: 30px;
+}
+
+/* adding asterics for required input */
+.menu__login__input label::after {
+  content: "\002A";
+  color: rgb(206, 47, 47);
+  padding: 0 4px;
+}
+
+/* login submit button */
+.menu__login__input button {
+  width: fit-content;
+}
+
+/* Login other option styles */
+
+.menu__login__otherOptions > a {
+  color: rgb(105, 105, 105);
+  padding-right: 20px;
+}
+
+/* adding right angle quotation mark */
+.menu__login__otherOptions a::before {
+  content: "\00BB";
+  font-size: 2rem;
+  display: inline-block;
+  transform: translateY(2px);
+}
+
+/* otherOption hover effect */
+.menu__login__otherOptions a:hover {
+  color: rgb(133, 133, 133);
+  text-decoration: underline;
+}
+
+.menu__login__input .btn--dark {
+  margin: 15px 0 20px;
+}
+
+.menu__login__encryption {
+  padding: 10px 20px 20px 20px;
+}
+
+/* add lock icon before encryption text */
+.menu__login__encryption::before {
+  content: url(icons/icons8-lock.svg);
+  display: inline-block;
+  transform: scale(0.7) translateY(10px);
+}
+
+/* close button */
+
+.menu__login__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  font-size: 20px;
+  text-decoration: none;
+  color: rgba(185, 180, 180, 0.774);
+  transition: all 200ms;
+}
+
+/* NAV-LEFT STYLES */
+
+/* MAIN NAV LIST style */
+.nav__list {
+  margin-bottom: 10px;
+  position: relative;
+  top: 30px;
+  background-color: white;
+}
+
+.nav__list > li > a {
+  display: block;
+  padding: 15px 5px;
+  color: var(--lightgrey);
+}
+
+.nav__list > li > a:hover,
+.nav__list > li > a:focus-within {
+  color: black;
+}
+
+.nav__list > li:hover > .nav__subnav-list {
+  border-top: solid 0.1px rgba(216, 216, 216, 0.836);
+}
+
+/* To add the down-pointing triangle */
+.nav__list > li > a::after {
+  content: "\23F7";
+  color: #979797;
+  margin: 0px 5px;
+  float: right;
+}
+
+/* SUBMENU 1 style */
+.nav__subnav-item {
+  font-weight: bold;
+  display: block;
+  padding: 15px 0px 15px 30px;
+}
+
+.nav__subnav-item:hover {
+  text-decoration: underline;
+}
+
+/* SUBMENU 2 style */
+.nav__subnav-list li ul a {
+  color: var(--lightgrey);
+  font-size: 0.9rem;
+  display: block;
+  padding: 10px 0px 0px 40px;
+  margin-bottom: 3px;
+}
+
+.nav__subnav-list li ul {
+  margin-bottom: 15px;
+  background-color: white;
+}
+
+.nav__subnav-list li ul li a:hover {
+  background-color: rgba(238, 236, 234, 0.534);
+  color: black;
+}
+
+/* BURGER MENU */
+
+/* burger menu hover space */
+.burger__icon {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+/* to layout the burger lines */
+
+.burger__line {
+  display: block;
+  /* position: relative; */
+  top: 10px;
+  width: 25px;
+  height: 3px;
+  background: #000000;
+  transition: 0.2s ease-in-out;
+}
+
+/* .burger__line::before,
+.burger__line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+} */
+
+.burger__line--top {
+  transform: translateY(-5px);
+}
+
+.burger__line--bottom {
+  transform: translateY(5px);
+}
+
+/* to add animation 'X' animation to the burger menu */
+.burger__checkbox:checked + .burger__icon > .burger__line--top {
+  transform: translateY(-2px) rotate(-45deg);
+}
+
+.burger__checkbox:checked + .burger__icon > .burger__line--middle {
+  transform: translateY(-5px) rotate(45deg);
+}
+
+/* to hide the checkbox */
+.burger__checkbox {
+  display: none;
+}
+
+/* adding hover instructions */
+.nav__list {
+  display: none;
+}
+.burger__checkbox:checked ~ .nav__list {
+  display: block;
+}
+
+.nav__subnav-list li {
+  display: none;
+}
+
+.nav__list > li:hover ul > li {
+  display: block;
+}
+
+@media screen and (min-width: 990px) {
+  /* Login popup - wider */
+  .menu__login__popUp {
+    max-width: 900px;
+  }
+
+  .menu__login__input.field label {
+    width: 200px;
+    text-align: right;
+    padding: 8px 20px 0;
+  }
+
+  .menu__login__input.field {
+    flex-direction: row;
+    margin-top: 20px;
+  }
+
+  .menu__login__input input {
+    width: 495px;
+  }
+
+  .menu__login__otherOptions {
+    padding-top: 10px;
+  }
+
+  .menu__login__otherOptions,
+  .menu__login__input .btn--dark {
+    margin-left: 310px;
+  }
+
+  .menu__login__input .btn--dark {
+    width: 100px;
+  }
+}
+
+/* -------- DESKTOP VERSION @ 1024PX --------- */
+
+@media screen and (min-width: 1024px) {
+  /* to hide burger menu icon */
+  .burger__checkbox,
+  .burger__icon,
+  .burger__line {
+    display: none;
+  }
+
+  /* to make main nav list appear in a column */
+  .nav__list {
+    display: flex;
+    position: absolute;
+    top: 0px;
+  }
+
+  /* space between links */
+
+  .nav__list > li {
+    padding-right: 15px;
+  }
+
+  /* hide the downward triangles */
+  .nav__list > li > a::after {
+    display: none;
+  }
+
+  /* to unset the border-top on hover */
+  .nav__list > li:hover > .nav__subnav-list {
+    border-top: unset;
+  }
+
+  /* to add grid layout to the submenu */
+  .nav__list > li > .nav__subnav-list {
+    position: absolute;
+    left: 0px;
+    min-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    background-color: white;
+    box-shadow: 5px 5px 0px 0px rgba(143, 142, 142, 0.452);
+    z-index: 3;
+  }
+
+  /* unset the submenu margins */
+  .nav__subnav-list li ul a,
+  .nav__subnav-item {
+    padding-left: 20px;
+  }
+
+  /* overlay on the main when menu is hovered */
+
+  .nav__overlay--hover {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 200px;
+    left: 0;
+    z-index: 2;
+
+    background-color: rgba(0, 0, 0, 0.267);
+    transform: scale(1, 0);
+  }
+
+  .nav--left:hover ~ .nav__overlay--hover {
+    transform: scale(1, 1);
+  }
+}
+
+@media (min-width: 1200px) {
+  /* menu list spacing */
+  .nav__list > li {
+    padding-right: 40px;
+  }
+
+  .nav__list > li > .nav__subnav-list {
+    width: 98vw;
+    max-width: 1430px;
+  }
+}

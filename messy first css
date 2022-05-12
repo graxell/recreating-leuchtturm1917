@@ -1,0 +1,286 @@
+/* -------- MAIN STYLING --------*/
+
+/* --- mobile first --- */
+
+
+/* container styles */
+.section-container,
+.section--Banner,
+.social-media {
+    border-bottom: 1px solid rgba(177, 177, 177, 0.637);
+}
+
+.section--Banner,
+.section-container,
+.video-container {
+    padding: 15px 0 20px;
+}
+
+/* content spacing */
+
+
+
+
+/* button link styling */
+
+.btn {
+    margin: 30px 0px 20px;
+    font-size: 0.9rem;
+    padding: 15px 15px;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn--dark {
+    background-color: black;
+    color: white;
+}
+
+.btn--dark:hover {
+    background-color: rgb(83, 83, 83);
+}
+.btn--light {
+    background-color: rgba(223, 223, 223, 0.637);
+    color: black;
+    border: solid black 1px;
+}
+
+/* section image styles */
+
+.section-img img,
+.section--Banner img {
+    width: 100%;
+    height: auto;
+}
+  
+/* heading and paragraph styles */
+.section-container h2 {
+    line-height: 45px;
+    font-size: 2rem;
+    margin: 40px 0 40px;
+}
+
+.banner--Overlay > p {
+    font-size: 1.3rem;
+}
+
+.banner--Overlay > h2 {
+    font-size: 2.2rem;
+    padding: 15px 0 15px;
+}
+  
+main .section-container p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    line-height: 23px;
+}
+  
+.inline-bold {
+    font-weight: bold;
+}
+
+.section-content li {
+    list-style: outside;
+    margin: 0 0 0 40px;
+}
+
+/* VIDEO */
+
+.video--Wrapper {
+    grid-column: 1 / span 2;
+}
+
+/* register */
+
+.newsletter--reg {
+    border: solid rgba(177, 177, 177, 0.493) 1px;
+    border-radius: 5px;
+    max-width: 300px;
+    height: 50px;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.newsletter--reg input {
+    border: none;
+}
+
+.newsletter--reg input::placeholder {
+    font-size: 0.8rem;
+    color: rgba(165, 165, 165, 0.829);
+}
+
+
+/* pre-ftr shield check bullet points */
+
+.shield-check {
+    padding-bottom: 100px;
+}
+
+.shield-check li {
+    padding: 10px 0; 
+}
+
+.shield-check li::before {
+    content: '';
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+    padding: 0 5px;
+    background: url("/icons/shield-checkmark.svg"); 
+    background-repeat: no-repeat;
+    transform: translateY(10px);
+}
+
+/* pre-ftr social media */
+
+.pre--ftr .social-media {
+    text-align: center;
+    padding: 100px 0 60px;
+}
+
+.pre--ftr .social-media .section-title {
+    margin-bottom: 10px;
+}
+
+  
+
+/* ---- MEDIA QUERY @765 */
+
+@media screen and (min-width: 769px) {
+
+    header,
+    main {
+        max-width: 743px;
+        margin: auto;
+    }
+
+    /* to make sections have alternating layout of img and content side by side */
+
+    .section-container:nth-child(even) {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr;
+        column-gap: 25px;
+    }
+
+    .section-container:nth-child(even) > .section-img {
+        grid-column: 1;
+    }
+
+    .section-container:nth-child(even) > .section-content {
+        grid-column: 2;
+    }
+
+    .section-container:nth-child(odd) {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto;
+        column-gap: 25px;
+    }
+
+    .section-container:nth-child(odd) > .section-content {
+        grid-area: 1 / 1;
+    }
+
+    .section-container:nth-child(odd) > .section-img {
+        grid-area: 1 / 2;
+    }
+
+    .section-img img {
+        width: 285px;
+        margin-top: 50px;
+    }
+
+    /* adding banner text on top of the image */
+    .section--Banner {
+        position: relative;
+    }
+
+    .banner--Overlay {
+        position: absolute;
+        top: 90px;
+        left: 10%;
+    }
+
+}
+
+@media (min-width: 990px) {
+    
+    header,
+    main {
+        min-width: 950px;
+        margin: auto;
+    }
+
+    /* section img gets bigger */
+
+    .section-img img {
+        min-width: 375px;
+        margin-top: 50px;
+    }
+
+    /* sheild check */
+
+    .shield-check {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .shield-check li {
+        min-width: 33%;
+        max-width: 390px;
+    }
+
+    /* video media query */
+
+    .video--Wrapper video {
+        width: 100%;
+    }
+}
+
+
+  /* ---- DESKTOP VERSION @1024 */
+  
+@media (min-width: 1024px) {
+    
+    /* to set the body's size */
+    /* header,
+    main {
+      min-width: 1000px;
+      margin: auto;
+    } */
+
+    /* Banner text gets bigger */
+
+    .banner--Overlay > h2 {
+        font-size: 6rem;
+        padding: 15px 0 15px;
+    }
+  
+}
+
+@media (min-width: 1200px) {
+
+
+    /* to set the body's size */
+    header,
+    main {
+      max-width: 1430px;
+      margin: auto;
+      padding-inline: 13px;
+    }
+
+    .section-img img {
+        width: 580px;
+        margin-top: 0px;
+    }
+
+    .shield-check li {
+        max-width: 450px;
+    }
+}

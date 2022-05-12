@@ -1,0 +1,60 @@
+/* ---------- DEFAULT STYLING ---------- */
+@font-face {
+  font-family: 'helvetica-regular';
+  src: url("fonts/helvetica-regular.woff2") format("woff2");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'helvetica-bold';
+  src: url("fonts/HelveticaNeueBold.woff2") format("woff2");
+  font-weight: bold;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'helvetica-regular';
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  margin-bottom: 20px;
+}
+
+body h1,
+body h2,
+body h3 {
+  font-family: 'helvetica-bold';
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+/* FOR VIDEO: ARRANGE LATER */
+
+video {
+  max-width: 100%;
+}
+
+header,
+main {
+  margin: 0 13px;
+  height: 100%;
+}
