@@ -1,0 +1,291 @@
+/* ----- SMALL SCREENS, LAPTOP MEDIA QUERY @ 769px ----- */
+
+@media screen and (min-width: 769px) {
+  header,
+  main {
+    max-width: 743px;
+    margin: auto;
+  }
+
+  /* -- MAIN @ 769px -- */
+
+  /* Even main section numbers to have image on the left */
+  .main__section.main__section--alternate:nth-child(even) {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+  }
+
+  .main__section.main__section--alternate:nth-child(even)
+    > .section__img--wrapper {
+    grid-column: 1;
+  }
+
+  .main__section.main__section--alternate:nth-child(even) > .section__content {
+    grid-column: 2;
+  }
+
+  /* Odd main section numbers to have image on the right */
+  .main__section.main__section--alternate:nth-child(odd) {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .main__section.main__section--alternate {
+    column-gap: 80px;
+  }
+
+  .main__section.main__section--alternate:nth-child(odd) > .section__content {
+    grid-area: 1 / 1;
+  }
+
+  .main__section.main__section--alternate:nth-child(odd)
+    > .section__img--wrapper {
+    grid-area: 1 / 2;
+  }
+
+  /* section image width change */
+  .main__section.main__section--alternate .section__img {
+    width: 285px;
+    margin-top: 50px;
+  }
+
+  /* adding banner text on top of the image */
+  .main__section--banner {
+    position: relative;
+  }
+
+  .section__content--banner {
+    position: absolute;
+    top: 90px;
+    left: 10%;
+  }
+
+  /* -- FOOTER @ 769px -- */
+
+  .ftr--top {
+    justify-content: flex-start;
+  }
+
+  .ftr--top__block {
+    text-align: left;
+    min-width: 40%;
+    max-width: 345px;
+  }
+}
+
+/* ----- SMALL SCREENS, LAPTOP MEDIA QUERY @ 990px ----- */
+
+@media screen and (min-width: 990px) {
+  header,
+  main {
+    min-width: 950px;
+    max-width: 95%;
+    margin: auto;
+  }
+
+  /* -- NAVIGATION / MENU @990px -- */
+
+  /* to hide burger menu icon */
+  .burger__icon {
+    display: none;
+  }
+
+  /* to make main nav list appear in a row */
+  .nav__list {
+    display: flex;
+    position: absolute;
+    top: 0px;
+  }
+
+  /* space between links */
+  .nav__list > li {
+    padding-right: 15px;
+  }
+
+  /* hide the downward triangles */
+  .nav__list > li > a::after {
+    display: none;
+  }
+
+  /* to unset the border-top on hover */
+  .nav__list > li:hover > .nav__subnav-list {
+    border-top: unset;
+  }
+
+  /* to add grid layout to the submenu */
+  .nav__list > li > .nav__subnav-list {
+    position: absolute;
+    left: 0px;
+    min-width: 1000px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    background-color: var(--myWhite);
+    box-shadow: 5px 5px 0px 0px var(--darkGreyBorder);
+    z-index: 3;
+  }
+
+  /* unset the submenu margins */
+  .nav__subnav-list li ul a,
+  .nav__subnav-item {
+    padding-left: 20px;
+  }
+
+  /* overlay on the main when menu is hovered */
+
+  .nav__overlay--hover {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 200px;
+    left: 0;
+    z-index: 2;
+
+    background-color: rgba(0, 0, 0, 0.267);
+    transform: scale(1, 0);
+  }
+
+  .nav--left:hover ~ .nav__overlay--hover {
+    transform: scale(1, 1);
+  }
+
+  /* Login popup - wider */
+  .menu__popUp {
+    max-width: 900px;
+  }
+
+  .menu__popUp__form.field label {
+    width: 200px;
+    text-align: right;
+    padding: 8px 20px 0;
+  }
+
+  .menu__popUp__form.field {
+    flex-direction: row;
+    margin-top: 20px;
+  }
+
+  .menu__popUp__form.field input {
+    width: 495px;
+  }
+
+  .menu__login__otherOptions {
+    padding-top: 10px;
+  }
+
+  .menu__login__otherOptions,
+  .menu__popUp__form .btn--dark {
+    margin-left: 310px;
+  }
+
+  /* shopping cart */
+
+  .menu__basket__box {
+    left: -200px;
+    width: 400px;
+    height: 120px;
+
+    box-shadow: 4px 3px 3px 0px rgba(0, 0, 0, 0.43);
+  }
+
+  .menu__basket__box img {
+    right: 58px;
+  }
+
+  .menu__basket__box p {
+    text-align: left;
+    padding: 20px 0 0px 25px;
+  }
+
+  /* -- MAIN SECTIONS @ 990px -- */
+
+  /* Banner text gets bigger */
+  .section__content--banner > h2 {
+    font-size: 6rem;
+    padding: 15px 0 15px;
+  }
+
+  .section__video--heading {
+    font-size: 3rem;
+  }
+
+  /* section img gets bigger */
+  .main__section.main__section--alternate .section__img {
+    min-width: 375px;
+    margin-top: 50px;
+  }
+
+  /* sheild check */
+  .section__shield-check {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .section__shield-check li {
+    min-width: 33%;
+    max-width: 390px;
+  }
+
+  /* VIDEO @ 990PX */
+
+  .section__video {
+    width: 100%;
+  }
+
+  /*-- FOOTER @990px -- */
+
+  .ftr--top__block {
+    justify-content: left;
+  }
+
+  .ftr--top__block {
+    text-align: left;
+    min-width: 25%;
+    max-width: 335px;
+  }
+
+  .ftr--bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* -------- LARGE SCREEN VERSION @ 1200px --------- */
+
+@media (min-width: 1200px) {
+  /* to set the body's size */
+  header,
+  main {
+    max-width: 1430px;
+    margin: auto;
+    padding-inline: 13px;
+  }
+
+  /*-- NAVIGATION / MENU @1200px -- */
+
+  /* menu list spacing */
+  .nav__list > li {
+    padding-right: 40px;
+  }
+
+  .nav__list > li > .nav__subnav-list {
+    width: 98vw;
+    max-width: 1430px;
+  }
+
+  /*-- MAIN SECTIONS @1200px -- */
+
+  .main__section.main__section--alternate .section__img {
+    width: 580px;
+    margin-top: 0px;
+  }
+
+  .section__shield-check li {
+    max-width: 450px;
+  }
+}

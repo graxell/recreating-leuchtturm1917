@@ -8,11 +8,16 @@
         <!-- TITLE-->
         <title>LEUCHTTURM1917</title>
 
+        <!-- FAVICON LINKS -->
+        <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+
+
         <!-- LINK TO STYLESHEETS -->
-        <link rel="stylesheet" type="text/css" href="styles.css">
+        
         <link rel="stylesheet" type="text/css" href="general-header.css">
-        <link rel="stylesheet" href="main-footer.css">
-        <link rel="stylesheet" href="footer.css">
+        <link rel="stylesheet" type="text/css" href="main-footer.css">
+        <link rel="stylesheet" type="text/css" href="media.css">
     </head>
 
 
@@ -21,7 +26,7 @@
         <header>
             <!-- WEBSITE LOGO -->
             <h1 class="header__logo" id="top">
-                <img src="icons/LT1917_Logo_DmdH_black.svg" alt="Leuchtturm1917 Logo">
+                <img src="icons/logo/LT1917_Logo_DmdH_black.svg" alt="Leuchtturm1917 Logo">
             </h1>
 
             <!-- NAVIGATION LIST START -->
@@ -43,7 +48,6 @@
                         <!-- NOTEBOOK MENU LIST START -->
                         <li><a href="main.html">Notebooks</a>
 
-                            <!-- NOTEBOOK SUBMENU-1 -->
                             <ul class="nav__subnav-list">  
                                 <!-- NEW SUBMENU START -->
                                 <li>
@@ -141,7 +145,6 @@
                         <li>
                             <a href="footer.html">Planners</a>
 
-                            <!--PLANNERS SUBMENU-1-->
                             <ul class="nav__subnav-list"> 
                                 <!-- ALL MODELS SUBMENU -->
                                 <li> 
@@ -165,7 +168,6 @@
                         <li>
                             <a href="polygon.html">Pens and storage</a>
 
-                             <!--PENS AND STORAGE SUBMENU-1-->
                             <ul class="nav__subnav-list">
                                 <!-- WRITING INSTRUMENTS SUBMENU START -->
                                 <li>
@@ -208,9 +210,8 @@
 
                         <!-- CUSTOM PRODUCTS LIST START -->
                         <li>
-                            <a href="#">Custom products</a>
-                            
-                            <!--CUSTOM PRODUCTS SUBMENU-1-->
+                            <a href="#">Custom products</a>                   
+                          
                             <ul class="nav__subnav-list"> 
 
                                 <!-- PERSONALISATION SUBMENU START -->
@@ -242,7 +243,6 @@
                         <li>
                             <a href="#">Denken mit der Hand</a>
 
-                            <!--DENKEN MIT DER HAND SUBMENU-1-->
                             <ul class="nav__subnav-list"> 
 
                                 <!-- ABOUT LEUCHTTURM1917 SUBMENU START -->
@@ -281,7 +281,7 @@
                     <!-- SEARCH BAR -->
                     <div class="menu__container menu__searchBar">
 
-                        <label for="menu__searchBar__toggle"><img src="icons/search.png" alt="Search bar icon"></label>
+                        <label for="menu__searchBar__toggle"><img src="icons/rightNavIcons/search.png" alt="Search bar icon"></label>
 
                         <!-- to make search bar appear and disappear on click -->
                         <input type="checkbox" id="menu__searchBar__toggle">
@@ -289,7 +289,7 @@
                         <!-- search bar box -->
                         <div id="menu__searchBar__box" class="menu__searchBar__box">
                             <input type="text" placeholder="Enter search term">
-                            <label for="menu__searchBar__toggle"><img src="icons/search.png" alt="Search bar icon"></label>
+                            <label for="menu__searchBar__toggle"><img src="icons/rightNavIcons/search.png" alt="Search bar icon"></label>
                         </div>
 
                     </div>
@@ -297,43 +297,43 @@
                     <!-- PHONE CONTACTS -->
                     <div class="menu__container menu__contacts">
 
-                        <img src="icons/phone.png" alt="Phone icon">
+                        <img src="icons/rightNavIcons/phone.png" alt="Phone icon">
 
                         <!-- outer div added to act as border around the clip path -->
                         <div class="menu__contacts__outer">
                             <div class="menu__contacts__inner">
                                 <a type="tel" href="#">+ 49 (0) 4152 801 140 <span class="menu__contacts--lineBreak">Order hotline</span></a>
                                 
-                                <a href="#">Contact form<span class="menu__contacts--lineBreak">For your messages to us</span></a>
+                                <a href="#menu__contactForm__popUp">Contact form<span class="menu__contacts--lineBreak">For your messages to us</span></a>
                                 
                                 <a href="#">Retailer list<span class="menu__contacts--lineBreak span--end">Retailer near you</span></a>
-                                
                             </div>
                         </div>
+
                     </div>
 
                     <!-- USER LOGIN -->
                     <div class="menu__container menu__login">
                         <!-- login user icon -->
-                        <a href="#menu__login__popUp"><img src="icons/user.png" alt="Login user icon"></a>
+                        <a href="#menu__login__popUp"><img src="icons/rightNavIcons/user.png" alt="Login user icon"></a>
 
                         <!-- login overlay and popup -->
-                        <div id="menu__login__popUp" class="menu__login--overlay">
+                        <div id="menu__login__popUp" class="menu__popUp--overlay">
 
-                            <div class="menu__login__popUp">
+                            <div class="menu__popUp login">
                                 
-                                <h4 class="menu__login__heading">Login / Account</h4>
+                                <h4>Login / Account</h4>
 
-                                <div class="menu__login__input">
+                                <div class="menu__popUp__form">
                                     <!-- email input -->
-                                    <div class="menu__login__input field">
-                                        <label for="login__email">email</label>
+                                    <div class="menu__popUp__form field">
+                                        <label class="label--required" for="login__email">email</label>
                                         <input type="email" id="login__email" name="login__email" required>
                                     </div>
 
                                     <!-- password input -->
-                                    <div class="menu__login__input field">
-                                        <label for="login__password">Password</label>
+                                    <div class="menu__popUp__form field">
+                                        <label class="label--required" for="login__password">Password</label>
                                         <input type="password" name="login__password" required>
                                     </div>
 
@@ -344,25 +344,40 @@
                                     </div>
 
                                     <!-- login button -->
-                                    <button class="btn--dark">Log in</button>
+                                    <button class="btn btn--dark">Log in</button>
                                 </div>
 
                                 <!-- login encryption -->
                                 <p class="menu__login__encryption">TLS1.2, high level encryption (AES-128, 128 Bit)</p>
                                 
                                 <!-- login exit button -->
-                                <a class="menu__login__close" href="#">&#10006;</a>
+                                <a class="menu__exit__btn" href="#">&#10006;</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- SHOPPING CART -->
-                    <div class="menu__container cart">
-                        <img src="icons/cart.png" alt="Shopping basket icon">
+                    <div class="menu__container menu__basket">
+
+                        <img src="icons/rightNavIcons/cart.png" alt="Shopping basket icon">
+    
+                        <!-- Basket hover box -->
+                        <div id="menu__basket__box" class="menu__basket__box">
+
+                            <img src="icons/rightNavIcons/cart.png" alt="Shopping basket icon">
+
+                            <h4>Shopping basket</h4>
+                            <p>You have no items in your shopping basket.</p>
+
+                            <!-- menu exit button -->
+                            <a class="menu__exit__btn basket" href="#">&#10006;</a>
+                        </div>
+
                     </div>
                 </div>
                 <!-- NAVIGATION ICONS END -->
 
+                <!-- EMPTY div added to act as the overlay when nav is on desktop version -->
                 <div class="nav__overlay--hover"></div>
             </nav>
         </header>
@@ -371,11 +386,14 @@
         <!----------- MAIN START ----------->
         <main>
 
-            <!-- CONTENT 0: IMAGE AS THE BACKGROUND -->
-            <div class="section--Banner">
-                <a href="#"><img src="images/header_2_en.jpg" alt="Start-up Journal picture"></a>
+            <!-- CONTENT 0: IMAGE BANNER -->
+            <div class="main__section main__section--banner">
 
-                <div class="banner--Overlay">
+                <a href="#">
+                    <img class="section__img section__img--banner" src="images/header_2_en.jpg" alt="Start-up Journal picture">
+                </a>
+
+                <div class="section__content--banner">
                     <h2>Start-up Journal</h2>
                     <p>In 15 steps to your own company.</p>
 
@@ -383,13 +401,15 @@
                 </div>
             </div>
 
-            <!-- CONTENT 1 -->
-            <div class="section-container">
-                <div class="section-img">
-                    <a href="#"><img src="images/content_modul_480x480_de_2.jpg" alt="Notepad in new colours"></a>
+            <!-- CONTENT 1: IMAGE-LEFT -- NOTEPAD IN NEW COLORS-->
+            <div class="main__section main__section--alternate">
+
+                <div class="section__img--wrapper">
+                    <a href="#"><img class="section__img" src="images/content_modul_480x480_de_2.jpg" alt="Notepad in new colours"></a>
                 </div>
 
-                <div class="section-content">
+                <div class="section__content">
+
                     <h2>Notepad in new colours</h2>
                     <p>Port Red, Powder, Lemon, Sage and Navy - The notepad is now available in brilliant colours. Shopping lists, memos, spontaneous ideas - always at your fingertips to quickly jot something down. Each page is perforated and can be removed, if desired.</p>
 
@@ -397,17 +417,17 @@
                 </div>
             </div>
 
-            <!-- CONTENT 2 -->
-            <div class="section-container">
+            <!-- CONTENT 2: IMAGE RIGHT -- MONOCLE by LEUCHTTURM1917 -->
+            <div class="main__section main__section--alternate">
 
-                <div class="section-img">
-                <a href="#"><img src="images/content_2_monocle_kalender-2022.jpg" alt="Monocle 2022 Notebook"></a>
+                <div class="section__img--wrapper">
+                    <a href="#"><img class="section__img" src="images/content_2_monocle_kalender-2022.jpg" alt="Monocle 2022 Notebook"></a>
                 </div>
 
-                <div class="section-content">
+                <div class="section__content">
                     <h2>MONOCLE by LEUCHTTURM1917</h2>
 
-                    <p><span class="inline-bold">A stationery collection with content and style.</span></p>
+                    <p><span class="section__inline--bold">A stationery collection with content and style.</span></p>
                     <p>The exclusive edition for people who wish to combine an urban way of life with their own ideas. The result of our design collaboration with the international lifestyle magazine MONOCLE. A premium collection of stationery featuring coordination notebooks, planners and accessories for discerning people.</p>
 
                     <p>This collection bears the joint signature of LEUCHTTURM1917 and MONOCLE. Curated with the passion embodied by both brands for clean and functional design with subtle details and striking contents.</p>
@@ -416,14 +436,15 @@
                 </div>
             </div>
 
-            <!-- CONTENT 3: IMAGE LEFT -->
-            <div class="section-container">
+            <!-- CONTENT 3: IMAGE LEFT -- PLANNERS 2022 -->
+            <div class="main__section main__section--alternate">
 
-                <div class="section-img">
-                    <a href="#"><img src="images/content_3_planners_2022_.jpg" alt="Planners 2022"></a>
+                <div class="section__img--wrapper">
+                    <a href="#"><img class="section__img" src="images/content_3_planners_2022_.jpg" alt="Planners 2022"></a>
                 </div>
+        
 
-                <div class="section-content">
+                <div class="section__content">
                     <h2>Planners 2022</h2>
 
                     <p>The range of functions a planner may need to fulfil are as varied and individual as people's daily schedules. We at LEUCHTTURM1917 are well aware of this fact - which is why we created five different planner variants. Each of our planners offers users a unique set of benefits to meet individual requirements.</p>
@@ -434,14 +455,14 @@
                 </div>
             </div>
 
-            <!-- CONTENT 4: IMAGE RIGHT -->
-            <div class="section-container">
+            <!-- CONTENT 4: IMAGE RIGHT -- NEW PREMIUM 129G EDITION -->
+            <div class="main__section main__section--alternate">
 
-                <div class="section-img">
-                    <a href="#"><img src="images/content_4_120g_edition.jpg" alt="New premium 120G edition"></a>
+                <div class="section__img--wrapper">
+                    <a href="#"><img class="section__img" src="images/content_4_120g_edition.jpg" alt="New premium 120G edition"></a>
                 </div>
 
-                <div class="section-content">
+                <div class="section__content">
                     <h2>The new premium 129G Edition. A matter of transparency</h2>
 
                     <p>The new 120G Edition notebooks are a perfect choice for anyone who loves to combine writing with sketching and drawing. By adding the right filler, the paper has a very low transparency. Writing and drawings are not visible from the back.</p>
@@ -452,14 +473,15 @@
                 </div>
             </div>
 
-            <!-- CONTENT 5: IMAGE LEFT -->
-            <div class="section-container">
+            <!-- CONTENT 5: IMAGE LEFT -- DREHGRIFFEL NR. 1 WITH GEL INK -->
+            <div class="main__section main__section--alternate">
 
-                <div class="section-img">
-                    <a href="#"><img src="images/content_5_drehgriffel_nr1.jpg" alt="Drehgriffel Nr. 1 Pen"></a>
+                <div class="section__img--wrapper">
+                    <a href="#"><img class="section__img" src="images/content_5_drehgriffel_nr1.jpg" alt="Drehgriffel Nr. 1 Pen"></a>
                 </div>
+               
 
-                <div class="section-content">
+                <div class="section__content">
                     <h2>For an extra fine ink stroke - Drehgriffel Nr. 1 with Gel Ink</h2>
 
                     <p>Inspired by the Asian art of writing with its filigree typeface made up of detailed characters, the award-winning design of the Drehgriffel Nr. 1 pen now comes with a Japanese 0.5mm gel pen refill.</p>
@@ -470,21 +492,21 @@
                 </div>
             </div>
 
-            <!-- CONTENT 6: IMAGE RIGHT -->
-            <div class="section-container">
+            <!-- CONTENT 6: IMAGE RIGHT -- BULLET JOURNAL EDITION 2 -->
+            <div class="main__section main__section--alternate">
 
-                <div class="section-img">
-                    <a href="#"><img src="images/content_6_bujo_2_2021.jpg" alt="Bullet Journal Edition 2 picture"></a>
+                <div class="section__img--wrapper">
+                    <a href="#"><img class="section__img" src="images/content_6_bujo_2_2021.jpg" alt="Bullet Journal Edition 2 picture"></a>
                 </div>
 
-                <div class="section-content">
+                <div class="section__content">
                     <h2>Bullet Journal&reg; - Edition 2. The new, improved original.</h2>
 
                     <p>In cooperation with the international Bullet Journaling community and designer Ryder Carroll, we are writing the next successful chapter of the original Bullet Journal&reg;.</p>
 
-                    <p>The intensive exchange with the BuJo community has generated ideas for new features and details, with which Ryder Carroll's ground-breaking method for self-organisation can be integrated into your own life even more intuitively.<span class="inline-bold"> Enjoy more individual structure and creativity - with the new Bullet Journal&reg; - Edition 2.</span></p>
+                    <p>The intensive exchange with the BuJo community has generated ideas for new features and details, with which Ryder Carroll's ground-breaking method for self-organisation can be integrated into your own life even more intuitively.<span class="section__inline--bold"> Enjoy more individual structure and creativity - with the new Bullet Journal&reg; - Edition 2.</span></p>
 
-                    <ul>
+                    <ul class="section__list">
                         <li>Specially developed low-transparency 129 g/m<sup>2</sup> paper</li>
                         <li>Page Dividers for smart markings on each paper G</li>
                         <li>rid Guide for calendar, overviews, diagrams and trackers</li>
@@ -497,14 +519,15 @@
                 </div>
             </div>            
 
-            <!-- CONTENT 7: IMAGE LEFT -->
-            <div class="section-container">
+            <!-- CONTENT 7: IMAGE LEFT -- EVERY MORNING BRINGS THE MAGIC -->
+            <div class="main__section main__section--alternate">
 
-                <div class="section-img">
-                    <a href="#"><img src="images/content_7_1721x-1721_kachel_packshot.jpg" alt="Rising Colours edition"></a>
+                <div class="section__img--wrapper">
+                    <a href="#"><img class="section__img" src="images/content_7__kachel_packshot_rising_colours.jpg" alt="Rising Colours edition"></a>
                 </div>
+                
 
-                <div class="section-content">
+                <div class="section__content">
                     <h2>Every morning brings the magic of a new beginning.</h2>
 
                     <p>Rising Sun, Aquamarine, Stone Blue and Warm Earth.</p>
@@ -515,14 +538,14 @@
                 </div>
             </div>
 
-            <!-- CONTENT 8: IMAGE RIGHT -->
-            <div class="section-container">
+            <!-- CONTENT 8: IMAGE RIGHT -- OUR NOTEBOOKS -->
+            <div class="main__section main__section--alternate">
 
-                <div class="section-img">
-                    <a href="#"><img src="images/content_8_1721x1721_kachel_range.jpg" alt="LEUCHTTURM1917 notebooks"></a>
+                <div class="section__img--wrapper">
+                    <a href="#"><img class="section__img" src="images/content_8_1721x1721_kachel_range.jpg" alt="LEUCHTTURM1917 notebooks"></a>
                 </div>
 
-                <div class="section-content">
+                <div class="section__content">
                     <h2>Our notebooks</h2>
 
                     <p>A LEUCHTTURM1917 notebook gives you the freedom to discover yourself and your life.</p>
@@ -536,35 +559,37 @@
                 </div>
             </div>
 
-            <!-- CONTENT 9: VIDEO -->
-            <div class="section-container">
+            <!-- CONTENT 9: VIDEO -AND- IMAGE LEFT -- WRITING BY HAND IS THINKING ON PAPER -->
+            <div class="main__section main__section--alternate">
 
-                <div class="video--Wrapper">
-                    <h2 class="video--Title">Denken mit der Hand&ast;</h2>
+                <div class="section__video--wrapper">
+                    <h2 class="section__video--heading">Denken mit der Hand&ast;</h2>
 
                     <a href="#">
-                        <video muted autoplay loop>
+                        <video class="section__video" muted autoplay loop>
                             <source src="videos/Startseite_Video.mp4" type="video/mp4">
                             <!-- In case the browser doesnt support the video  -->
-                            <p class="unsupported-media">Your browser does not support the video tag.</p></video>
+                            <p class="unsupported-media">Your browser does not support the video file.</p>
+                        </video>
                     </a>
                 </div>
 
 
-            <!-- CONTENT 9: IMAGE LEFT -->
+            <!-- CONTENT 9: IMAGE LEFT -- WRITING BY HAND IS THINKING ON PAPER -->
 
-                <div class="section-img">
-                    <a href="#"><img src="images/content_9_visual_1_hand_topshot_1280x960.jpg" alt="Visual Hand topshot"></a>
-                </div>
+            <div class="section__img--wrapper">
+                <a href="#"><img class="section__img" src="images/content_9_visual_1_hand_topshot_1280x960.jpg" alt="Visual Hand topshot"></a>
+            </div>
+                
 
-                <div class="section-content">
+                <div class="section__content">
                     <h2>&ast;Writing by hand is thinking on paper.</h2>
 
                     <p>Thoughts grow into words, sentences and pictures.</p>
 
                     <p>Memories become stories. Ideas are transformed into projects. Notes inspire insight.</p>
 
-                    <p><b>We write and understand, learn, see and think - with our hands.</b></p>
+                    <p><span class="section__inline--bold">We write and understand, learn, see and think - with our hands.</span></p>
                     
                     <p>Your ideas, your plans, your projects. It's all in your hands.</p>
 
@@ -574,48 +599,50 @@
                 </div>
             </div>
 
-            <!--------- CONTENT 10: IMAGE RIGHT --------->
-            <div class="section-container">
+            <!-- CONTENT 10: IMAGE RIGHT -- NEWSLETTER-->
+            <div class="main__section main__section--alternate">
 
-                <div class="section-img">
-                    <a href="#"><img src="images/content_10_newsletter_img.jpg" alt="To do list top shot"></a>
+                <div class="section__img--wrapper">
+                    <a href="#"><img class="section__img" src="images/content_10_newsletter_img.jpg" alt="To do list top shot"></a>
                 </div>
 
-                <div class="section-content">
+                <div class="section__content">
                     <h2>Never miss out on anything again!</h2>
 
-                    <p class="section-text">We love to write - especially by hand.</p>
+                    <p>We love to write - especially by hand.</p>
 
                     <p>Of course we also love writing to you digitally. This way, we can keep you personally up to date about all our latest products, offers and special promotions.</p>
 
                     <p>If you don't want to miss out on any of this, then you've come to the right place.</p>
 
-                    <h2 class="section-title">Register now for the Newsletter</h2>
+                    <h3>Register now for the Newsletter</h2>
 
-                    <form action="#" class="newsletter--reg">
+                    <form action="#" class="section__newsletter">
                         <input type="email" name="email" placeholder="email@domain.tld">
                         <button class="btn--Send">&#129106;</button>
                     </form>
                 </div>
             </div>
 
-            <!--------- CONTENT 11: SOCIAL MEDIA DIV --------->
-            <div class="pre--ftr">
+            <!--------- CONTENT 11: PRE-FTR -- SOCIAL MEDIA DIV --------->
 
-                <div class="social-media">
-                    <h2 class="section-title">Follow us</h2>
-                    <img src="icons/facebook_32x32.png" alt="Facebook icon" class="social-icon">
-                    <img src="icons/insta_32x32.png" alt="Instagram icon"  class="social-icon">
+            <div class="main__section main__section--socials">
+                <div class="section__content section__content--socials">
+                    <h2>Follow us</h2>
+                    <a href="https://www.facebook.com/Leuchtturm1917/" target="_blank"><img src="icons/socials/facebook_32x32.png" alt="Facebook icon" class="social-icon"></a>
+                    <a href="https://www.instagram.com/leuchtturm1917/" target="_blank"><img src="icons/socials/insta_32x32.png" alt="Instagram icon"  class="social-icon"></a>
                 </div>
-
-                <ul class="shield-check">
-                    <li>The world's largest selection</li>
-                    <li>Purchase on account</li>
-                    <li>Fast delivery</li>
-                    <li>30 days to return</li>
-                    <li>Top customer ratings</li>
-                </ul>
             </div>
+
+
+            <ul class="section__shield-check">
+                <li>The world's largest selection</li>
+                <li>Purchase on account</li>
+                <li>Fast delivery</li>
+                <li>30 days to return</li>
+                <li>Top customer ratings</li>
+            </ul>
+
         </main>
         <!----------- MAIN END ----------->
 
@@ -624,49 +651,49 @@
             <div class="ftr--top">
 
                 <!-- FTR-TOP BLOCK -- SERVICE -->
-                <div class="ftrTop--block">
+                <div class="ftr--top__block">
                     <h3>Service</h3>
                     <ul>
-                        <li>Order hotline</li>
-                        <li>Contact information</li>
-                        <li>FAQ</li>
+                        <li><a href="#">Order hotline</a></li>
+                        <li><a href="#">Contact information</a></li>
+                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
 
                 <!--  FTR-TOP BLOCK -- SIMPLY SHOPPING -->
-                <div class="ftrTop--block">
+                <div class="ftr--top__block">
                     <h3>Simply shopping</h3>
                     <p>SSL encryption</p>
                 </div>
 
                  <!-- FTR-TOP BLOCK -- PAYMENT -->
-                <div class="ftrTop--block">
+                <div class="ftr--top__block">
                     <h3>Payment options</h3>
                     <p>Advance payment</p>
                     <div class="payment-icons">
-                        <img src="icons/cc-visa-brands.svg" alt="Visa Icon">
-                        <img src="icons/cc-mastercard-brands.svg" alt="Mastercard Icon">
-                        <img src="icons/cc-paypal-brands.svg" alt="Paypal Icon">
+                        <img src="icons/payment/cc-visa-brands.svg" alt="Visa Icon">
+                        <img src="icons/payment/cc-mastercard-brands.svg" alt="Mastercard Icon">
+                        <img src="icons/payment/cc-paypal-brands.svg" alt="Paypal Icon">
                     </div>
                 </div>
                 
                 <!-- FTR-TOP BLOCK -- LEUCHTTURM1917 -->
-                <div class="ftrTop--block">
+                <div class="ftr--top__block">
                     <h3>Leuchtturm1917</h3>
                     <ul>
-                        <li>About us</li>
-                        <li>Career</li>
-                        <li>Press</li>
-                        <li>Service</li>
-                        <li>Catalogue</li>
-                        <li>Retailer portal</li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Service</a></li>
+                        <li><a href="#">Catalogue</a></li>
+                        <li><a href="#">Retailer portal</a></li>
                     </ul>
                 </div>
 
                 <!-- FTR-TOP BLOCK -- RETAILERS LIST -->
-                <div class="ftrTop--block">
+                <div class="ftr--top__block">
                     <h3>Retailer list</h3>
-                    <p class="map-marker-blt">Retailer near you</p>
+                    <p class="ftr--top__mapMarker"><a href="#">Retailer near you</a></p>
                 </div>
             </div>
 
@@ -674,45 +701,45 @@
             <div class="ftr--bottom">
 
                 <!--  FTR-BOTTOM BLOCK -- COPYRIGHT -->
-                <div class="ftrBottom--block">
+                <div class="ftr--bottom__block">
                     <p>&copy;2021 LEUCHTTURM. All rights reserved.</p>
                 </div>
 
                 <!-- FTR-BOTTOM BLOCK -- LEGAL LINKS -->
-                <div class="ftrBottom--block">
-                    <ul class="ftr--legalLinks">
-                        <li>Data protection</li>
-                        <li>Terms & Conditions</li>
-                        <li>Sitemap</li>
-                        <li>Contact information</li>
-                        <li>Simple cancellation form</li>
+                <div class="ftr--bottom__block">
+                    <ul class="ftr--bottom__legal">
+                        <li><a href="#">Data protection</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="#">Contact information</a></li>
+                        <li><a href="#">Simple cancellation form</a></li>
                     </ul>
                 </div>
                 
                 <!-- FTR-BOTTOM BLOCK -- LANGUAGE OPTIONS -->
-                <div class="ftrBottom--block">
-                    <form action="#" class="lang-list">
-                        <select name="language--Select" class="language--Select">
-                            <option lang="ca" value="english"><img src="icons/flags/ca.png" alt="Canada flag icon"> Canada - English</option>
-                            <option lang="de" value="english"><img src="icons/flags/de.png" alt="Deutschland flag icon"> Deutschland</option>
-                            <option lang="es" value="english"><img src="icons/flags/es.png" alt="Espana flag icons"> España</option>
-                            <option lang="ch" value="english"><img src="icons/flags/ch.png" alt="Switzerland flag icon"> Schweiz - Deutsch</option>
-                            <option lang="ch" value="english"><img src="icons/flags/ch.png" alt="Switzerland flag icon"> Suisse - Français</option>
-                            <option lang="at" value="english"><img src="icons/flags/at.png" alt="Austria flag icon"> Österreich</option>
-                            <option lang="uk" value="english"><img src="icons/flags/uk.png" alt="United Kingdom flag icon">United Kingdom</option>
-                            <option lang="fr" value="english"><img src="icons/flags/fr.png" alt="France flag icon">France</option>
-                            <option lang="us" value="english"><img src="icons/flags/us.png" alt="USA flag icon">USA</option>
-                            <option lang="de" value="english"><img src="icons/flags/ot.png" alt="Other Language icon">Andere Lander - Deutsch</option>
-                            <option lang="ot" value="english"><img src="icons/flags/ot.png" alt="Other Language icon">Other Countries - English</option>
-                            <option lang="ot" value="english"><img src="icons/flags/ot.png" alt="Other Language icon">Autres Pays - Français</option>
-                            <option lang="de" value="english"><img src="icons/flags/ot.png" alt="Other Language icon">Otros Paises - Español</option>
+                <div class="ftr--bottom__block">
+                    <form action="#" class="ftr--bottom__langList">
+                        <select name="language__select" class="language__select">
+                            <option lang="ca" value="CA"><img src="icons/flags/ca.png" alt="Canada flag icon"> Canada - English</option>
+                            <option lang="de" value="DE"><img src="icons/flags/de.png" alt="Deutschland flag icon"> Deutschland</option>
+                            <option lang="es" value="ES"><img src="icons/flags/es.png" alt="Espana flag icons"> España</option>
+                            <option lang="ch" value="CH"><img src="icons/flags/ch.png" alt="Switzerland flag icon"> Schweiz - Deutsch</option>
+                            <option lang="ch" value="CH"><img src="icons/flags/ch.png" alt="Switzerland flag icon"> Suisse - Français</option>
+                            <option lang="at" value="ST"><img src="icons/flags/at.png" alt="Austria flag icon"> Österreich</option>
+                            <option lang="uk" value="UK"><img src="icons/flags/uk.png" alt="United Kingdom flag icon">United Kingdom</option>
+                            <option lang="fr" value="FR"><img src="icons/flags/fr.png" alt="France flag icon">France</option>
+                            <option lang="us" value="US"><img src="icons/flags/us.png" alt="USA flag icon">USA</option>
+                            <option lang="de" value="DE"><img src="icons/flags/ot.png" alt="Other Language icon">Andere Lander - Deutsch</option>
+                            <option lang="ot" value="OT"><img src="icons/flags/ot.png" alt="Other Language icon">Other Countries - English</option>
+                            <option lang="ot" value="OT"><img src="icons/flags/ot.png" alt="Other Language icon">Autres Pays - Français</option>
+                            <option lang="de" value="DE"><img src="icons/flags/ot.png" alt="Other Language icon">Otros Paises - Español</option>
                         </select>
                     </form>
                 </div>
             </div>
 
             <!-- BACK TO THE TOP BUTTON -->
-            <div class="backtotop">
+            <div class="ftr__backToTop">
                 <a href="#top"><img src="icons/up.svg" alt="Back to the top icon"></a>
             </div>
         </footer>
